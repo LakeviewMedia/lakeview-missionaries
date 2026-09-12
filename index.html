@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lakeview Assembly of God Missionaries</title>
+
+  <style>
+    :root {
+      --blue: #0a3d62;
+      --orange: #ff9800;
+      --orange-light: #ffb347;
+      --light: #eef2f7;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6b76;
+      --border: #e5e7eb;
+      --shadow: 0 14px 38px rgba(0,0,0,.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+    }
+
+    /* =========================
+       TOP NAVIGATION
+    ========================= */
+
+    .site-header {
+      background: var(--blue);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    }
+
+    .nav-container {
+      max-width: 1500px;
+      margin: auto;
+      padding: 0 20px;
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--orange-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 10px;
+      border-radius: 999px;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--orange);
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero-wrap {
+      width: 100%;
+      padding: 40px 18px 30px;
+    }
+
+    .hero {
+      width: min(1400px, 95%);
+      min-height: 550px;
+      margin: auto;
+
+      border-radius: 30px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(rgba(7,34,66,.78), rgba(7,34,66,.78)),
+        url("https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=2400&fit=crop&q=80");
+
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      color: white;
+
+      padding: 70px 40px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+      margin: 0;
+      font-weight: 900;
+      text-shadow: 0 4px 18px rgba(0,0,0,.55);
+    }
+
+    .hero h2 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      font-weight: 900;
+      color: var(--orange-light);
+      text-shadow: 0 4px 18px rgba(0,0,0,.55);
+    }
+
+    .scripture {
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.45;
+      font-style: italic;
+      margin: 28px auto 14px;
+      text-shadow: 0 4px 18px rgba(0,0,0,.60);
+    }
+
+    .reference {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.65;
+      margin: 0 auto;
+    }
+
+    /* =========================
+       REGIONS
+    ========================= */
+
+    .regions-section {
+      background: white;
+      padding: 60px 14px 70px;
+      text-align: center;
+    }
+
+    .regions-section h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 5vw, 48px);
+      color: var(--blue);
+    }
+
+    .intro {
+      max-width: 880px;
+      margin: 0 auto 34px;
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.65;
+      color: #555;
+    }
+
+    .desktop-map-wrap {
+      width: min(1120px, 100%);
+      margin: auto;
+    }
+
+    .map-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid #eef1f4;
+    }
+
+    #lakeviewMap {
+      width: 100%;
+      height: clamp(360px, 48vw, 575px);
+    }
+
+    .region-nav {
+      width: min(1050px, 100%);
+      margin: 20px auto 0;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .region-nav a {
+      min-height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 12px 10px;
+
+      color: #555;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+
+      border: 1px solid var(--border);
+      background: white;
+
+      transition: .2s ease;
+    }
+
+    .region-nav a:hover,
+    .region-nav a.active {
+      background: var(--orange);
+      color: white;
+    }
+
+    .map-note {
+      margin: 18px auto 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* =========================
+       MOBILE REGION CARDS
+    ========================= */
+
+    .mobile-region-list {
+      display: none;
+      max-width: 680px;
+      margin: 28px auto 0;
+      text-align: left;
+    }
+
+    .region-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      background: white;
+      color: var(--blue);
+
+      text-decoration: none;
+      font-weight: 800;
+
+      padding: 18px;
+      margin-bottom: 15px;
+
+      border-radius: 18px;
+      border-left: 8px solid var(--orange);
+
+      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    }
+
+    .region-icon {
+      width: 46px;
+      height: 46px;
+
+      border-radius: 50%;
+      background: #eef5fb;
+      color: var(--orange);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 25px;
+      flex-shrink: 0;
+    }
+
+    .region-card-text {
+      flex: 1;
+    }
+
+    .region-card-title {
+      display: block;
+      font-size: 20px;
+    }
+
+    .region-card-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .region-arrow {
+      color: var(--orange);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      background: var(--blue);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .footer h2 {
+      font-size: clamp(34px,5vw,42px);
+      margin: 0 0 10px;
+      color: var(--orange-light);
+    }
+
+    .footer p {
+      line-height: 1.6;
+      margin: 0 auto 20px;
+      max-width: 700px;
+    }
+
+    /* =========================
+       RESPONSIVE NAVIGATION
+    ========================= */
+
+    @media (max-width: 1100px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+
+        background: var(--blue);
+        padding: 12px 20px 20px;
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 980px) {
+
+      .region-nav {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-wrap {
+        padding: 18px 12px 24px;
+      }
+
+      .hero {
+        width: 100%;
+        min-height: auto;
+        border-radius: 22px;
+        padding: 54px 18px;
+      }
+
+      .desktop-map-wrap {
+        display: none;
+      }
+
+      .mobile-region-list {
+        display: block;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="site-header">
+
+  <div class="nav-container">
+
+    <a href="./" class="brand">
+      Lakeview <span>Missionaries</span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="./" class="active">Home</a>
+
+      <a href="next-gen/">
+        Next Gen
+      </a>
+
+      <a href="europe/">
+        Europe
+      </a>
+
+      <a href="africa/">
+        Africa
+      </a>
+
+      <a href="eurasia/">
+        Eurasia
+      </a>
+
+      <a href="asia-pacific/">
+        Asia Pacific
+      </a>
+
+      <a href="latin-america/">
+        Latin America
+      </a>
+
+      <a href="international-ministries/">
+        International Ministries
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero-wrap">
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Lakeview Assembly of God</h1>
+
+      <h2>Missionaries</h2>
+
+      <div class="scripture">
+
+        “Then Jesus came to them and said, ‘All authority in heaven
+        and on earth has been given to me. Therefore go and make
+        disciples of all nations, baptizing them in the name of the
+        Father and of the Son and of the Holy Spirit, and teaching
+        them to obey everything I have commanded you. And surely I
+        am with you always, to the very end of the age.’”
+
+      </div>
+
+      <div class="reference">
+        Matthew 28:18–20 NIV
+      </div>
+
+      <p>
+
+        Our mission is to partner with God's servants around the
+        world through <strong>prayer, giving, and sending.</strong>
+
+        Explore each region to learn about the missionaries that
+        Lakeview Assembly of God supports.
+
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- =========================
+     REGIONS
+========================= -->
+
+<section class="regions-section">
+
+  <h2>Choose a Region to Explore</h2>
+
+  <p class="intro">
+
+    On a computer, hover over the world map to highlight a missions
+    region. Click a region or country to explore.
+
+  </p>
+
+
+  <!-- DESKTOP MAP -->
+
+  <div class="desktop-map-wrap">
+
+    <div class="map-card">
+
+      <div id="lakeviewMap"></div>
+
+    </div>
+
+
+    <nav class="region-nav">
+
+      <a
+        href="europe/"
+        data-region="Europe"
+      >
+        Europe
+      </a>
+
+      <a
+        href="africa/"
+        data-region="Africa"
+      >
+        Africa
+      </a>
+
+      <a
+        href="eurasia/"
+        data-region="Eurasia"
+      >
+        Eurasia
+      </a>
+
+      <a
+        href="asia-pacific/"
+        data-region="Asia Pacific"
+      >
+        Asia Pacific
+      </a>
+
+      <a
+        href="latin-america/"
+        data-region="Latin America Caribbean"
+      >
+        Latin America
+      </a>
+
+      <a
+        href="international-ministries/"
+        data-region="International Ministries"
+      >
+        International Ministries
+      </a>
+
+    </nav>
+
+    <p class="map-note">
+      Hover over the map or region names to highlight regions.
+    </p>
+
+  </div>
+
+
+  <!-- MOBILE -->
+
+  <div class="mobile-region-list">
+
+    <a class="region-card" href="next-gen/">
+
+      <span class="region-icon">👧</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Next Gen
+        </span>
+
+        <span class="region-card-subtitle">
+          Explore Next Gen missions
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a class="region-card" href="europe/">
+
+      <span class="region-icon">🌍</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Europe
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a class="region-card" href="africa/">
+
+      <span class="region-icon">🌍</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Africa
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a class="region-card" href="eurasia/">
+
+      <span class="region-icon">🌏</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Eurasia
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a class="region-card" href="asia-pacific/">
+
+      <span class="region-icon">🌏</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Asia Pacific
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a class="region-card" href="latin-america/">
+
+      <span class="region-icon">🌎</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          Latin America
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+
+    <a
+      class="region-card"
+      href="international-ministries/"
+    >
+
+      <span class="region-icon">🤝</span>
+
+      <span class="region-card-text">
+
+        <span class="region-card-title">
+          International Ministries
+        </span>
+
+        <span class="region-card-subtitle">
+          View missionaries
+        </span>
+
+      </span>
+
+      <span class="region-arrow">›</span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+  <h2>Pray • Give • Go</h2>
+
+  <p>
+
+    “Declare His glory among the nations,
+    His marvelous deeds among all peoples.”
+
+    <br><br>
+
+    Psalm 96:3
+
+  </p>
+
+  <strong>
+    Lakeview Assembly of God
+  </strong>
+
+</footer>
+
+
+<!-- =========================
+     MAP LIBRARIES
+========================= -->
+
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuButton.addEventListener(
+  "click",
+  function() {
+
+    navLinks.classList.toggle("open");
+
+  }
+);
+
+
+/* =========================
+   MAP
+========================= */
+
+if (
+  window.innerWidth > 768 &&
+  document.getElementById("lakeviewMap")
+) {
+
+am5.ready(function() {
+
+  const links = {
+
+    "Europe":
+      "europe/",
+
+    "Africa":
+      "africa/",
+
+    "Eurasia":
+      "eurasia/",
+
+    "Asia Pacific":
+      "asia-pacific/",
+
+    "Latin America Caribbean":
+      "latin-america/",
+
+    "International Ministries":
+      "international-ministries/"
+
+  };
+
+
+  const regionByCountry = {
+
+    /* LATIN AMERICA */
+
+    "AR":"Latin America Caribbean",
+    "BO":"Latin America Caribbean",
+    "BR":"Latin America Caribbean",
+    "CL":"Latin America Caribbean",
+    "CO":"Latin America Caribbean",
+    "CR":"Latin America Caribbean",
+    "CU":"Latin America Caribbean",
+    "DO":"Latin America Caribbean",
+    "EC":"Latin America Caribbean",
+    "SV":"Latin America Caribbean",
+    "GT":"Latin America Caribbean",
+    "HT":"Latin America Caribbean",
+    "HN":"Latin America Caribbean",
+    "JM":"Latin America Caribbean",
+    "MX":"Latin America Caribbean",
+    "NI":"Latin America Caribbean",
+    "PA":"Latin America Caribbean",
+    "PY":"Latin America Caribbean",
+    "PE":"Latin America Caribbean",
+    "PR":"Latin America Caribbean",
+    "UY":"Latin America Caribbean",
+    "VE":"Latin America Caribbean",
+
+    /* AFRICA */
+
+    "DZ":"Africa",
+    "AO":"Africa",
+    "BJ":"Africa",
+    "BW":"Africa",
+    "BF":"Africa",
+    "BI":"Africa",
+    "CM":"Africa",
+    "CF":"Africa",
+    "TD":"Africa",
+    "CG":"Africa",
+    "CD":"Africa",
+    "CI":"Africa",
+    "EG":"Africa",
+    "ET":"Africa",
+    "GH":"Africa",
+    "KE":"Africa",
+    "MG":"Africa",
+    "MW":"Africa",
+    "ML":"Africa",
+    "MA":"Africa",
+    "MZ":"Africa",
+    "NA":"Africa",
+    "NE":"Africa",
+    "NG":"Africa",
+    "RW":"Africa",
+    "SN":"Africa",
+    "SO":"Africa",
+    "ZA":"Africa",
+    "SS":"Africa",
+    "SD":"Africa",
+    "TZ":"Africa",
+    "TG":"Africa",
+    "TN":"Africa",
+    "UG":"Africa",
+    "ZM":"Africa",
+    "ZW":"Africa",
+
+    /* EUROPE */
+
+    "AL":"Europe",
+    "AT":"Europe",
+    "BE":"Europe",
+    "BA":"Europe",
+    "BG":"Europe",
+    "HR":"Europe",
+    "CZ":"Europe",
+    "DK":"Europe",
+    "EE":"Europe",
+    "FI":"Europe",
+    "FR":"Europe",
+    "DE":"Europe",
+    "GR":"Europe",
+    "HU":"Europe",
+    "IS":"Europe",
+    "IE":"Europe",
+    "IT":"Europe",
+    "LV":"Europe",
+    "LT":"Europe",
+    "LU":"Europe",
+    "NL":"Europe",
+    "NO":"Europe",
+    "PL":"Europe",
+    "PT":"Europe",
+    "RO":"Europe",
+    "RS":"Europe",
+    "SK":"Europe",
+    "SI":"Europe",
+    "ES":"Europe",
+    "SE":"Europe",
+    "CH":"Europe",
+    "GB":"Europe",
+
+    /* EURASIA */
+
+    "AM":"Eurasia",
+    "AZ":"Eurasia",
+    "BY":"Eurasia",
+    "GE":"Eurasia",
+    "IR":"Eurasia",
+    "IQ":"Eurasia",
+    "IL":"Eurasia",
+    "JO":"Eurasia",
+    "KZ":"Eurasia",
+    "KG":"Eurasia",
+    "LB":"Eurasia",
+    "RU":"Eurasia",
+    "SA":"Eurasia",
+    "SY":"Eurasia",
+    "TJ":"Eurasia",
+    "TR":"Eurasia",
+    "TM":"Eurasia",
+    "UA":"Eurasia",
+    "AE":"Eurasia",
+    "UZ":"Eurasia",
+    "AF":"Eurasia",
+    "PK":"Eurasia",
+
+    /* ASIA PACIFIC */
+
+    "AU":"Asia Pacific",
+    "BD":"Asia Pacific",
+    "BT":"Asia Pacific",
+    "BN":"Asia Pacific",
+    "KH":"Asia Pacific",
+    "CN":"Asia Pacific",
+    "FJ":"Asia Pacific",
+    "IN":"Asia Pacific",
+    "ID":"Asia Pacific",
+    "JP":"Asia Pacific",
+    "KR":"Asia Pacific",
+    "LA":"Asia Pacific",
+    "MY":"Asia Pacific",
+    "MN":"Asia Pacific",
+    "MM":"Asia Pacific",
+    "NP":"Asia Pacific",
+    "NZ":"Asia Pacific",
+    "PG":"Asia Pacific",
+    "PH":"Asia Pacific",
+    "SG":"Asia Pacific",
+    "LK":"Asia Pacific",
+    "TH":"Asia Pacific",
+    "VN":"Asia Pacific",
+    "TW":"Asia Pacific"
+
+  };
+
+
+  const root =
+    am5.Root.new("lakeviewMap");
+
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
+
+  if (root._logo) {
+    root._logo.dispose();
+  }
+
+
+  const chart =
+    root.container.children.push(
+
+      am5map.MapChart.new(root, {
+
+        panX: "none",
+        panY: "none",
+
+        wheelX: "none",
+        wheelY: "none",
+
+        projection:
+          am5map.geoNaturalEarth1()
+
+      })
+
+    );
+
+
+  const polygonSeries =
+    chart.series.push(
+
+      am5map.MapPolygonSeries.new(
+        root,
+        {
+
+          geoJSON:
+            am5geodata_worldLow,
+
+          exclude: ["AQ"]
+
+        }
+      )
+
+    );
+
+
+  const blue =
+    am5.color(0x0a3d62);
+
+  const orange =
+    am5.color(0xff9800);
+
+
+  polygonSeries
+    .mapPolygons
+    .template
+    .setAll({
+
+      tooltipText:
+        "{name}\n{region}",
+
+      interactive: true,
+
+      cursorOverStyle:
+        "pointer",
+
+      fill: blue,
+
+      stroke:
+        am5.color(0xffffff),
+
+      strokeWidth: .8
+
+    });
+
+
+  polygonSeries.events.on(
+    "datavalidated",
+    function() {
+
+      polygonSeries
+        .mapPolygons
+        .each(function(polygon) {
+
+          const id =
+            polygon
+              .dataItem
+              .dataContext
+              .id;
+
+          const region =
+            regionByCountry[id]
+            ||
+            "International Ministries";
+
+          polygon
+            .dataItem
+            .dataContext
+            .region =
+              region;
+
+          polygon.set(
+            "fill",
+            blue
+          );
+
+        });
+
+    }
+  );
+
+
+  function highlightRegion(region) {
+
+    document
+      .querySelectorAll(
+        ".region-nav a"
+      )
+      .forEach(function(link) {
+
+        link
+          .classList
+          .toggle(
+            "active",
+            link.dataset.region === region
+          );
+
+      });
+
+
+    polygonSeries
+      .mapPolygons
+      .each(function(polygon) {
+
+        const polygonRegion =
+          polygon
+            .dataItem
+            .dataContext
+            .region;
+
+        if (
+          polygonRegion === region
+        ) {
+
+          polygon.set(
+            "fill",
+            orange
+          );
+
+          polygon.set(
+            "opacity",
+            1
+          );
+
+        }
+
+        else {
+
+          polygon.set(
+            "fill",
+            blue
+          );
+
+          polygon.set(
+            "opacity",
+            .35
+          );
+
+        }
+
+      });
+
+  }
+
+
+  function clearHighlight() {
+
+    document
+      .querySelectorAll(
+        ".region-nav a"
+      )
+      .forEach(function(link) {
+
+        link
+          .classList
+          .remove("active");
+
+      });
+
+
+    polygonSeries
+      .mapPolygons
+      .each(function(polygon) {
+
+        polygon.set(
+          "fill",
+          blue
+        );
+
+        polygon.set(
+          "opacity",
+          1
+        );
+
+      });
+
+  }
+
+
+  polygonSeries
+    .mapPolygons
+    .template
+    .events
+    .on(
+      "pointerover",
+      function(ev) {
+
+        highlightRegion(
+          ev.target
+            .dataItem
+            .dataContext
+            .region
+        );
+
+      }
+    );
+
+
+  polygonSeries
+    .mapPolygons
+    .template
+    .events
+    .on(
+      "pointerout",
+      clearHighlight
+    );
+
+
+  polygonSeries
+    .mapPolygons
+    .template
+    .events
+    .on(
+      "click",
+      function(ev) {
+
+        const region =
+          ev.target
+            .dataItem
+            .dataContext
+            .region;
+
+        if (links[region]) {
+
+          window.location.href =
+            links[region];
+
+        }
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      ".region-nav a"
+    )
+    .forEach(function(link) {
+
+      link.addEventListener(
+        "mouseenter",
+        function() {
+
+          highlightRegion(
+            link.dataset.region
+          );
+
+        }
+      );
+
+      link.addEventListener(
+        "mouseleave",
+        clearHighlight
+      );
+
+    });
+
+
+  chart.appear(900,100);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
