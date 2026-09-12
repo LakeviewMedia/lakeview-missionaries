@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<title>Lakeview Kids Missions - BGMC</title>
+
+<style>
+:root{
+  --blue:#0a3d62;
+  --orange:#ff9800;
+  --orange-light:#ffb347;
+  --yellow:#ffd52e;
+  --red:#ef233c;
+  --green:#19a84a;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#555;
+  --soft:#eef2f7;
+  --shadow:0 14px 38px rgba(0,0,0,.18);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--soft);
+  color:var(--text);
+}
+
+img{
+  max-width:100%;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.site-header{
+  background:var(--blue);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.nav-container{
+  max-width:1500px;
+  margin:auto;
+  padding:0 20px;
+  min-height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  color:white;
+  font-size:20px;
+  font-weight:900;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.brand span{
+  color:var(--orange-light);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:4px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  padding:11px 10px;
+  border-radius:999px;
+  transition:.2s ease;
+  white-space:nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:var(--orange);
+}
+
+.menu-button{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* BACK LINK */
+
+.back-wrap{
+  width:min(1400px,95%);
+  margin:18px auto 0;
+}
+
+.back-link{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--blue);
+  font-weight:800;
+  background:white;
+  padding:10px 16px;
+  border-radius:999px;
+  box-shadow:0 5px 14px rgba(0,0,0,.10);
+}
+
+.back-link:hover{
+  color:var(--orange);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-wrap{
+  width:100%;
+  padding:18px 0 0;
+  background:var(--soft);
+}
+
+.hero{
+  position:relative;
+  width:100%;
+  min-height:620px;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255,213,46,.95) 0 130px, transparent 132px),
+    radial-gradient(circle at 88% 18%, rgba(239,35,60,.8) 0 110px, transparent 112px),
+    radial-gradient(circle at 78% 84%, rgba(25,168,74,.75) 0 150px, transparent 152px),
+    linear-gradient(135deg,#0a3d62 0%,#072242 55%,#111827 100%);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+
+  padding:80px 7%;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.5) 2px, transparent 3px);
+
+  background-size:24px 24px;
+  opacity:.18;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+
+  width:min(1300px,100%);
+
+  display:grid;
+  grid-template-columns:420px 1fr;
+
+  gap:50px;
+  align-items:center;
+}
+
+.buddy-img{
+  width:100%;
+  max-width:420px;
+  display:block;
+
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,.35));
+}
+
+.hero-content{
+  text-align:left;
+}
+
+.bgmc-badge{
+  display:inline-block;
+
+  background:var(--yellow);
+  color:#111;
+
+  font-weight:900;
+
+  font-size:clamp(44px,7vw,82px);
+  line-height:1;
+
+  padding:14px 24px 10px;
+
+  border-radius:18px;
+
+  margin-bottom:20px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,76px);
+  margin:0 0 10px;
+  font-weight:900;
+  line-height:1.05;
+
+  text-shadow:0 4px 18px rgba(0,0,0,.55);
+}
+
+.hero h2{
+  font-size:clamp(24px,3.6vw,40px);
+  color:var(--orange-light);
+  margin:0 0 22px;
+  font-weight:800;
+}
+
+.hero p{
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.65;
+  margin:0 0 18px;
+  max-width:760px;
+
+  text-shadow:0 4px 14px rgba(0,0,0,.45);
+}
+
+.hero-quote{
+  font-size:clamp(24px,3vw,34px) !important;
+  font-style:italic;
+  color:white;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:70px 8%;
+  text-align:center;
+  background:#f5f7fa;
+}
+
+.section.white{
+  background:#fff;
+}
+
+.section h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--blue);
+  margin:0 0 15px;
+}
+
+.section > p{
+  font-size:clamp(17px,2vw,20px);
+  color:var(--muted);
+  max-width:900px;
+  margin:0 auto 35px;
+  line-height:1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:40px auto 0;
+}
+
+.stat-card{
+  background:white;
+  padding:35px 25px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  border-top:6px solid var(--orange);
+}
+
+.stat-card h3{
+  font-size:34px;
+  color:var(--blue);
+  margin:0 0 10px;
+}
+
+.stat-card p{
+  font-size:17px;
+  margin:0;
+}
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:45px auto 0;
+}
+
+.info-card{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  text-align:left;
+}
+
+.info-card h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.info-card p{
+  font-size:18px;
+  margin:0;
+  color:#555;
+  line-height:1.65;
+}
+
+/* =========================
+   PHOTO CARD GRID
+========================= */
+
+.missionary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+  max-width:1400px;
+  margin:45px auto 0;
+}
+
+.missionary-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.14);
+  border-left:8px solid var(--orange);
+  text-align:left;
+}
+
+.missionary-photo{
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  display:block;
+}
+
+.missionary-content{
+  padding:30px;
+}
+
+.missionary-content h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 16px;
+}
+
+.missionary-content p{
+  font-size:18px;
+  margin:0;
+  color:#555;
+  line-height:1.65;
+}
+
+.missionary-content strong{
+  color:var(--blue);
+}
+
+/* =========================
+   FOCUS STRIP
+========================= */
+
+.focus-strip{
+  width:min(1400px,95%);
+  margin:40px auto;
+
+  border-radius:30px;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%, var(--yellow) 0 70px, transparent 71px),
+    radial-gradient(circle at 80% 75%, var(--red) 0 110px, transparent 111px),
+    linear-gradient(rgba(10,61,98,.92),rgba(10,61,98,.92));
+
+  color:white;
+
+  padding:70px 8%;
+
+  text-align:center;
+
+  box-shadow:var(--shadow);
+}
+
+.focus-strip h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--orange-light);
+  margin:0 0 18px;
+}
+
+.focus-strip p{
+  max-width:950px;
+  margin:0 auto;
+
+  color:white;
+
+  font-size:clamp(18px,2.2vw,22px);
+  line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:var(--blue);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer h2{
+  font-size:40px;
+  margin:0 0 12px;
+  color:var(--orange-light);
+}
+
+.footer p{
+  font-size:18px;
+  line-height:1.6;
+  margin:0 auto;
+  max-width:750px;
+}
+
+.footer a{
+  color:var(--orange-light);
+  font-weight:bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+  .menu-button{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+
+    position:absolute;
+
+    top:72px;
+    left:0;
+    right:0;
+
+    background:var(--blue);
+
+    padding:12px 20px 20px;
+
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:14px;
+    border-radius:10px;
+  }
+}
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:auto;
+    padding:55px 20px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:25px;
+    text-align:center;
+  }
+
+  .buddy-img{
+    max-width:260px;
+    margin:0 auto;
+  }
+
+  .hero-content{
+    text-align:center;
+  }
+
+  .section{
+    padding:50px 18px;
+  }
+
+  .stats,
+  .info-grid,
+  .missionary-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .missionary-photo{
+    height:280px;
+  }
+
+  .focus-strip{
+    width:calc(100% - 24px);
+    border-radius:22px;
+    padding:55px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="site-header">
+
+  <div class="nav-container">
+
+    <a href="../../" class="brand">
+      Lakeview <span>Missionaries</span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="../../">
+        Home
+      </a>
+
+      <a href="../" class="active">
+        Next Gen
+      </a>
+
+      <a href="../../europe/">
+        Europe
+      </a>
+
+      <a href="../../africa/">
+        Africa
+      </a>
+
+      <a href="../../eurasia/">
+        Eurasia
+      </a>
+
+      <a href="../../asia-pacific/">
+        Asia Pacific
+      </a>
+
+      <a href="../../latin-america/">
+        Latin America
+      </a>
+
+      <a href="../../international-ministries/">
+        International Ministries
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<div class="back-wrap">
+  <a href="../" class="back-link">
+    ← Back to Next Gen
+  </a>
+</div>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero-wrap">
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9jyxmcFZSoHs9vUHAIKXGbfXoKe1LSRUsb1hIBgmOLQ&s=10"
+        alt="Buddy Barrel"
+        class="buddy-img"
+      >
+
+      <div class="hero-content">
+
+        <div class="bgmc-badge">
+          BGMC
+        </div>
+
+        <h1>
+          Kids in Missions
+        </h1>
+
+        <h2>
+          PreK–5th Grade
+        </h2>
+
+        <p class="hero-quote">
+          “Kids helping kids know Jesus.”
+        </p>
+
+        <p>
+
+          Through BGMC, Lakeview kids can learn about missions,
+          pray for missionaries, give generously, and discover that
+          they can make a difference for Jesus right now.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- =========================
+     WHAT IS BGMC
+========================= -->
+
+<section class="section white">
+
+  <h2>
+    What Is BGMC?
+  </h2>
+
+  <p>
+
+    BGMC stands for Boys & Girls Missionary Challenge.
+
+    It helps kids learn about missions, care about people around
+    the world, pray for missionaries, and give so the gospel
+    can be shared.
+
+  </p>
+
+  <div class="stats">
+
+    <div class="stat-card">
+
+      <h3>
+        Know
+      </h3>
+
+      <p>
+        Kids learn about missionaries, countries, cultures,
+        and people who need Jesus.
+      </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <h3>
+        Pray
+      </h3>
+
+      <p>
+        Kids pray for missionaries, missionary kids,
+        churches, and families around the world.
+      </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <h3>
+        Give
+      </h3>
+
+      <p>
+        Kids give through BGMC to help provide supplies
+        and resources for missions work.
+      </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <h3>
+        Care
+      </h3>
+
+      <p>
+        Kids grow a heart for people who need help,
+        hope, and the love of Jesus.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     WHY KIDS MATTER
+========================= -->
+
+<section class="focus-strip">
+
+  <h2>
+    Why PreK–5th Grade Kids Matter
+  </h2>
+
+  <p>
+
+    Missions is not just for adults.
+
+    Kids can pray, give, serve, and care.
+
+    BGMC helps children build a lifelong heart for missions
+    while they are still young.
+
+  </p>
+
+</section>
+
+
+<!-- =========================
+     GET INVOLVED
+========================= -->
+
+<section class="section">
+
+  <h2>
+    How Kids Can Get Involved
+  </h2>
+
+  <div class="missionary-grid">
+
+
+    <div class="missionary-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900"
+        alt="Preschool kids learning"
+        class="missionary-photo"
+      >
+
+      <div class="missionary-content">
+
+        <h3>
+          PreK–Kindergarten
+        </h3>
+
+        <p>
+
+          <strong>
+            How they can help:
+          </strong>
+
+          Pray simple prayers, bring coins for BGMC, learn that
+          Jesus loves children around the world, and practice kindness.
+
+          <br><br>
+
+          <strong>
+            Simple challenge:
+          </strong>
+
+          Bring coins in a Buddy Barrel and pray,
+          “Jesus, help missionaries tell people about You.”
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="missionary-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900"
+        alt="Elementary kids learning together"
+        class="missionary-photo"
+      >
+
+      <div class="missionary-content">
+
+        <h3>
+          1st–3rd Grade
+        </h3>
+
+        <p>
+
+          <strong>
+            How they can help:
+          </strong>
+
+          Give to BGMC, pray for a missionary family,
+          learn about a country, invite friends to church,
+          and serve others with joy.
+
+          <br><br>
+
+          <strong>
+            Simple challenge:
+          </strong>
+
+          Pick one missionary or country to pray for each week.
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="missionary-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900"
+        alt="Older elementary kids serving"
+        class="missionary-photo"
+      >
+
+      <div class="missionary-content">
+
+        <h3>
+          4th–5th Grade
+        </h3>
+
+        <p>
+
+          <strong>
+            How they can help:
+          </strong>
+
+          Lead younger kids by example, help collect BGMC offerings,
+          share missionary facts, pray out loud, and help with missions
+          projects.
+
+          <br><br>
+
+          <strong>
+            Simple challenge:
+          </strong>
+
+          Help lead a BGMC moment in kids church or Sunday school.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FAMILIES
+========================= -->
+
+<section class="section white">
+
+  <h2>
+    Ways Families Can Participate
+  </h2>
+
+  <div class="info-grid">
+
+
+    <div class="info-card">
+
+      <h3>
+        🏠 Pray at Home
+      </h3>
+
+      <p>
+        Pick one missionary, country, or region to pray
+        for as a family each week.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <h3>
+        🪙 Fill a Buddy Barrel
+      </h3>
+
+      <p>
+        Help kids collect coins, allowance, chore money,
+        or special offerings for BGMC.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <h3>
+        🤝 Serve Locally
+      </h3>
+
+      <p>
+        Missions starts close to home.
+
+        Kids can serve neighbors, invite friends,
+        and show the love of Jesus.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+  <h2>
+    Know • Pray • Give • Care
+  </h2>
+
+  <p>
+
+    Learn more from BGMC:
+
+    <br><br>
+
+    <a
+      href="https://bgmc.ag.org/"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit BGMC
+    </a>
+
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<script>
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuButton.addEventListener(
+  "click",
+  function(){
+
+    navLinks.classList.toggle("open");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
