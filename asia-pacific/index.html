@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<title>Lakeview Assembly of God Missionaries - Asia Pacific</title>
+
+<style>
+:root{
+  --blue:#0a3d62;
+  --orange:#ff9800;
+  --orange-dark:#ef6c00;
+  --orange-light:#ffb347;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#555;
+  --soft:#eef2f7;
+  --shadow:0 14px 38px rgba(0,0,0,.18);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--soft);
+  color:var(--text);
+}
+
+/* NAVIGATION */
+
+.site-header{
+  background:var(--blue);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.nav-container{
+  max-width:1500px;
+  margin:auto;
+  padding:0 20px;
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  color:white;
+  font-size:20px;
+  font-weight:900;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.brand span{
+  color:var(--orange-light);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:4px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  padding:11px 10px;
+  border-radius:999px;
+  transition:.2s ease;
+  white-space:nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:var(--orange);
+}
+
+.menu-button{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero-wrap{
+  width:100%;
+  padding:40px 18px 30px;
+  background:var(--soft);
+}
+
+.hero{
+  width:min(1400px,95%);
+  min-height:550px;
+  margin:0 auto;
+  border-radius:30px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(rgba(7,34,66,.76),rgba(7,34,66,.76)),
+    url("https://images.unsplash.com/photo-1528181304800-259b08848526?w=1800");
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:70px 40px;
+
+  box-shadow:var(--shadow);
+}
+
+.hero-content{
+  max-width:760px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:clamp(38px,5.5vw,62px);
+  margin:0 0 10px;
+  font-weight:800;
+  line-height:1.05;
+  text-shadow:0 4px 18px rgba(0,0,0,.55);
+}
+
+.hero h2{
+  font-size:clamp(26px,3.6vw,38px);
+  color:var(--orange-light);
+  margin:0 0 22px;
+  font-weight:400;
+  line-height:1.2;
+  text-shadow:0 4px 18px rgba(0,0,0,.45);
+}
+
+.hero p{
+  font-size:clamp(16px,1.8vw,19px);
+  line-height:1.65;
+  margin:0 auto 18px;
+  max-width:760px;
+  text-shadow:0 4px 14px rgba(0,0,0,.45);
+}
+
+.hero-quote{
+  font-size:clamp(22px,3vw,30px)!important;
+  font-style:italic;
+  margin-bottom:22px!important;
+  color:white;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:70px 8%;
+  text-align:center;
+  background:#f5f7fa;
+}
+
+.section.white{
+  background:#fff;
+}
+
+.section h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--blue);
+  margin:0 0 15px;
+}
+
+.section > p{
+  font-size:clamp(17px,2vw,20px);
+  color:var(--muted);
+  max-width:900px;
+  margin:0 auto 35px;
+  line-height:1.7;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:40px auto 0;
+}
+
+.stat-card{
+  background:white;
+  padding:35px 25px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  border-top:6px solid var(--orange);
+}
+
+.stat-card h3{
+  font-size:34px;
+  color:var(--blue);
+  margin:0 0 10px;
+}
+
+.stat-card p{
+  font-size:17px;
+  margin:0;
+}
+
+/* INFO CARDS */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:45px auto 0;
+}
+
+.info-card{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  text-align:left;
+}
+
+.info-card h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.info-card p{
+  font-size:18px;
+  margin:0;
+  color:#555;
+  line-height:1.65;
+}
+
+/* MISSIONARY GRID */
+
+.missionary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+  max-width:1400px;
+  margin:45px auto 0;
+}
+
+.missionary-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.missionary-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.14);
+  border-left:8px solid var(--orange);
+  text-align:left;
+  transition:transform .25s ease, box-shadow .25s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.missionary-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 32px rgba(0,0,0,.18);
+}
+
+.missionary-photo{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+.missionary-content{
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+}
+
+.missionary-content h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 16px;
+}
+
+.missionary-content p{
+  font-size:18px;
+  margin:0 0 24px;
+  color:#555;
+  line-height:1.65;
+}
+
+.missionary-content strong{
+  color:var(--blue);
+}
+
+.learn-more{
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:auto;
+  padding:13px 22px;
+  background:var(--orange);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:999px;
+  text-decoration:none;
+  transition:background .25s ease, transform .25s ease;
+}
+
+.missionary-card:hover .learn-more{
+  background:var(--orange-dark);
+  transform:translateX(4px);
+}
+
+/* FOCUS STRIP */
+
+.focus-strip{
+  width:min(1400px,95%);
+  margin:40px auto;
+  border-radius:30px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(rgba(10,61,98,.90),rgba(10,61,98,.90)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1800");
+
+  background-size:cover;
+  background-position:center;
+
+  color:white;
+  padding:70px 8%;
+  text-align:center;
+
+  box-shadow:var(--shadow);
+}
+
+.focus-strip h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--orange-light);
+  margin:0 0 18px;
+}
+
+.focus-strip p{
+  max-width:950px;
+  margin:0 auto;
+  color:white;
+  font-size:clamp(18px,2.2vw,22px);
+  line-height:1.7;
+}
+
+/* FOOTER */
+
+.footer{
+  background:var(--blue);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer h2{
+  font-size:40px;
+  margin:0 0 12px;
+  color:var(--orange-light);
+}
+
+.footer p{
+  font-size:18px;
+  line-height:1.6;
+  margin:0 auto;
+  max-width:750px;
+}
+
+.footer a{
+  color:var(--orange-light);
+  font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+  .menu-button{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    background:var(--blue);
+    padding:12px 20px 20px;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:14px;
+    border-radius:10px;
+  }
+}
+
+@media(max-width:768px){
+
+  .hero-wrap{
+    padding:18px 12px 24px;
+  }
+
+  .hero{
+    width:100%;
+    min-height:auto;
+    border-radius:22px;
+    padding:54px 18px;
+  }
+
+  .section{
+    padding:50px 18px;
+  }
+
+  .stats,
+  .info-grid,
+  .missionary-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .info-card{
+    padding:26px 22px;
+  }
+
+  .missionary-photo{
+    height:280px;
+  }
+
+  .missionary-content{
+    padding:26px 22px;
+  }
+
+  .focus-strip{
+    width:calc(100% - 24px);
+    margin:24px auto;
+    border-radius:22px;
+    padding:55px 18px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="nav-container">
+
+    <a href="../" class="brand">
+      Lakeview <span>Missionaries</span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="../">
+        Home
+      </a>
+
+      <a href="../next-gen/">
+        Next Gen
+      </a>
+
+      <a href="../europe/">
+        Europe
+      </a>
+
+      <a href="../africa/">
+        Africa
+      </a>
+
+      <a href="../eurasia/">
+        Eurasia
+      </a>
+
+      <a href="../asia-pacific/" class="active">
+        Asia Pacific
+      </a>
+
+      <a href="../latin-america/">
+        Latin America
+      </a>
+
+      <a href="../international-ministries/">
+        International Ministries
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<div class="hero-wrap">
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Asia Pacific
+      </h1>
+
+      <h2>
+        Lakeview Assembly of God Missionaries
+      </h2>
+
+      <p class="hero-quote">
+        “We are reaching the never reached.”
+      </p>
+
+      <p>
+        Lakeview partners with missionaries and ministries serving across
+        Asia Pacific through prayer, giving, sending, church planting,
+        discipleship, compassion ministries, leadership development,
+        and gospel outreach in places still waiting to hear about Jesus.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<section class="section white">
+
+  <h2>
+    AGWM Asia Pacific Snapshot
+  </h2>
+
+  <p>
+    In Asia Pacific, many people live in places where the gospel has not yet reached.
+    AGWM Asia Pacific focuses on reaching the never reached through a wide range of ministries.
+  </p>
+
+  <div class="stats">
+
+    <div class="stat-card">
+      <h3>2.37B+</h3>
+      <p>Population</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>93.5%</h3>
+      <p>Nonevangelical</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>1,583</h3>
+      <p>Unreached People Groups</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>5.88M+</h3>
+      <p>AG Constituents</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>33,452</h3>
+      <p>AG Churches</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>39,197</h3>
+      <p>AG Ministers</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>505</h3>
+      <p>Missionaries and Associates</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="focus-strip">
+
+  <h2>
+    Why Asia Pacific Matters
+  </h2>
+
+  <p>
+    Asia Pacific includes massive cities, remote villages, island nations,
+    university communities, Buddhist, Hindu, Muslim, secular, and tribal contexts,
+    and many people groups still waiting for a clear witness of the gospel.
+  </p>
+
+</section>
+
+<section class="section">
+
+  <h2>
+    How We Can Pray
+  </h2>
+
+  <p>
+    Use these prayer focuses as a guide when praying for Lakeview-supported
+    missionaries and ministries serving throughout Asia Pacific.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+        🙏 Pray for the Never Reached
+      </h3>
+
+      <p>
+        Pray for people groups and communities that have little or no access
+        to the gospel, and for workers to be sent with wisdom, courage,
+        and compassion.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        ⛪ Pray for Church Planting
+      </h3>
+
+      <p>
+        Pray for new churches, discipleship movements, national pastors,
+        Bible schools, and Spirit-filled leaders to be raised up across
+        Asia Pacific.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        🌏 Pray for Open Doors
+      </h3>
+
+      <p>
+        Pray for open doors in cities, villages, islands, schools, homes,
+        and sensitive areas where missionaries and local believers are
+        sharing the hope of Jesus.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section white">
+
+  <h2>
+    Missionaries We Support
+  </h2>
+
+  <p>
+    Meet some of the missionaries Lakeview Assembly of God supports
+    and prays for throughout the Asia Pacific region.
+  </p>
+
+  <div class="missionary-grid">
+
+    <a
+      href="https://agmd.org/Profile/Index/04d5def5-82db-4a3f-afaa-654dcd5e6bd2"
+      class="missionary-link"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="missionary-card">
+
+        <img
+          src="https://agmd.org/Profile/ViewImage?ProfileGUID=04d5def5-82db-4a3f-afaa-654dcd5e6bd2&AssetID=8"
+          alt="Ben and Kathleen Struss"
+          class="missionary-photo"
+        >
+
+        <div class="missionary-content">
+
+          <h3>
+            Ben and Kathleen Struss
+          </h3>
+
+          <p>
+            <strong>Region:</strong>
+            Indonesia, Asia Pacific
+          </p>
+
+          <span class="learn-more">
+            Learn More →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>
+    Ways Lakeview Can Partner
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+        Pray
+      </h3>
+
+      <p>
+        Commit to praying regularly for missionaries, national churches,
+        unreached people groups, students, families, and believers serving
+        in difficult places.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        Give
+      </h3>
+
+      <p>
+        Support missionaries and missions projects through faithful giving
+        that helps advance the gospel and strengthen local churches across
+        Asia Pacific.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        Go
+      </h3>
+
+      <p>
+        Be open to short-term trips, missions opportunities,
+        and God’s call to serve wherever He leads.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <h2>
+    Pray • Give • Go
+  </h2>
+
+  <p>
+    Learn more from AGWM Asia Pacific:
+    <br><br>
+
+    <a
+      href="https://agwm.org/en/regions/asia-pacific/"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit AGWM Asia Pacific
+    </a>
+  </p>
+
+</footer>
+
+<script>
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuButton.addEventListener(
+  "click",
+  function(){
+
+    navLinks.classList.toggle("open");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
