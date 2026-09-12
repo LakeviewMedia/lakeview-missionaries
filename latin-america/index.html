@@ -500,12 +500,7 @@ body{
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <header class="site-header">
-
   <div class="nav-container">
 
     <a href="../" class="brand">
@@ -516,15 +511,14 @@ body{
       class="menu-button"
       id="menuButton"
       aria-label="Open navigation"
+      aria-expanded="false"
     >
       ☰
     </button>
 
     <nav class="nav-links" id="navLinks">
 
-      <a href="../">
-        Home
-      </a>
+      <a href="../">Home</a>
 
       <a href="../next-gen/">
         Next Gen
@@ -557,12 +551,7 @@ body{
     </nav>
 
   </div>
-
 </header>
-
-<!-- =========================
-     HERO
-========================= -->
 
 <div class="hero-wrap">
 
@@ -594,10 +583,6 @@ body{
   </section>
 
 </div>
-
-<!-- =========================
-     STATS
-========================= -->
 
 <section class="section white">
 
@@ -651,10 +636,6 @@ body{
 
 </section>
 
-<!-- =========================
-     WHY IT MATTERS
-========================= -->
-
 <section class="focus-strip">
 
   <h2>
@@ -669,10 +650,6 @@ body{
   </p>
 
 </section>
-
-<!-- =========================
-     PRAYER
-========================= -->
 
 <section class="section">
 
@@ -734,10 +711,6 @@ body{
 
 </section>
 
-<!-- =========================
-     MISSIONARIES
-========================= -->
-
 <section class="section white">
 
   <h2>
@@ -787,7 +760,6 @@ body{
 
     </a>
 
-
     <a
       href="https://agmd.org/Profile/Index/93018a68-3cf0-4b7b-b571-d9142ade47c0"
       class="missionary-link"
@@ -823,7 +795,6 @@ body{
       </div>
 
     </a>
-
 
     <a
       href="https://agmd.org/Profile/Index/d840e381-489b-4614-b408-34753e61717f"
@@ -864,10 +835,6 @@ body{
   </div>
 
 </section>
-
-<!-- =========================
-     PARTNER
-========================= -->
 
 <section class="section">
 
@@ -922,10 +889,6 @@ body{
 
 </section>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer class="footer">
 
   <h2>
@@ -948,22 +911,17 @@ body{
 </footer>
 
 <script>
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
 
-const menuButton =
-  document.getElementById("menuButton");
+menuButton.addEventListener("click", function(){
+  const isOpen = navLinks.classList.toggle("open");
 
-const navLinks =
-  document.getElementById("navLinks");
-
-menuButton.addEventListener(
-  "click",
-  function(){
-
-    navLinks.classList.toggle("open");
-
-  }
-);
-
+  menuButton.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+});
 </script>
 
 </body>
