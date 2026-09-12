@@ -1,4 +1,43 @@
-/* NAVIGATION */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<title>Lakeview Assembly of God Missionaries - Latin America Caribbean</title>
+
+<style>
+:root{
+  --blue:#0a3d62;
+  --orange:#ff9800;
+  --orange-dark:#ef6c00;
+  --orange-light:#ffb347;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#555;
+  --soft:#eef2f7;
+  --shadow:0 14px 38px rgba(0,0,0,.18);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--soft);
+  color:var(--text);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .site-header{
   background:var(--blue);
@@ -62,3 +101,870 @@
   font-size:30px;
   cursor:pointer;
 }
+
+/* =========================
+   HERO
+========================= */
+
+.hero-wrap{
+  width:100%;
+  padding:40px 18px 30px;
+  background:var(--soft);
+}
+
+.hero{
+  width:min(1400px,95%);
+  min-height:550px;
+  margin:0 auto;
+  border-radius:30px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(rgba(7,34,66,.76),rgba(7,34,66,.76)),
+    url("https://images.unsplash.com/photo-1518638150340-f706e86654de?w=1800");
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+
+  padding:70px 40px;
+
+  box-shadow:var(--shadow);
+}
+
+.hero-content{
+  max-width:760px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:clamp(38px,5.5vw,62px);
+  margin:0 0 10px;
+  font-weight:800;
+  line-height:1.05;
+  text-shadow:0 4px 18px rgba(0,0,0,.55);
+}
+
+.hero h2{
+  font-size:clamp(26px,3.6vw,38px);
+  color:var(--orange-light);
+  margin:0 0 22px;
+  font-weight:400;
+  line-height:1.2;
+  text-shadow:0 4px 18px rgba(0,0,0,.45);
+}
+
+.hero p{
+  font-size:clamp(16px,1.8vw,19px);
+  line-height:1.65;
+  margin:0 auto 18px;
+  max-width:760px;
+  text-shadow:0 4px 14px rgba(0,0,0,.45);
+}
+
+.hero-quote{
+  font-size:clamp(22px,3vw,30px)!important;
+  font-style:italic;
+  margin-bottom:22px!important;
+  color:white;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:70px 8%;
+  text-align:center;
+  background:#f5f7fa;
+}
+
+.section.white{
+  background:#fff;
+}
+
+.section h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--blue);
+  margin:0 0 15px;
+}
+
+.section > p{
+  font-size:clamp(17px,2vw,20px);
+  color:var(--muted);
+  max-width:900px;
+  margin:0 auto 35px;
+  line-height:1.7;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:40px auto 0;
+}
+
+.stat-card{
+  background:white;
+  padding:35px 25px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  border-top:6px solid var(--orange);
+}
+
+.stat-card h3{
+  font-size:34px;
+  color:var(--blue);
+  margin:0 0 10px;
+}
+
+.stat-card p{
+  font-size:17px;
+  margin:0;
+}
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:45px auto 0;
+}
+
+.info-card{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  text-align:left;
+}
+
+.info-card h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.info-card p{
+  font-size:18px;
+  margin:0;
+  color:#555;
+  line-height:1.65;
+}
+
+/* =========================
+   MISSIONARY GRID
+========================= */
+
+.missionary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+  max-width:1400px;
+  margin:45px auto 0;
+}
+
+.missionary-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.missionary-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.14);
+  border-left:8px solid var(--orange);
+  text-align:left;
+  transition:transform .25s ease,box-shadow .25s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.missionary-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 32px rgba(0,0,0,.18);
+}
+
+.missionary-photo{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+.missionary-content{
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+}
+
+.missionary-content h3{
+  color:var(--blue);
+  font-size:28px;
+  margin:0 0 16px;
+}
+
+.missionary-content p{
+  font-size:18px;
+  margin:0 0 24px;
+  color:#555;
+  line-height:1.65;
+}
+
+.missionary-content strong{
+  color:var(--blue);
+}
+
+.learn-more{
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:auto;
+  padding:13px 22px;
+  background:var(--orange);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:999px;
+  text-decoration:none;
+  transition:background .25s ease,transform .25s ease;
+}
+
+.missionary-card:hover .learn-more{
+  background:var(--orange-dark);
+  transform:translateX(4px);
+}
+
+/* =========================
+   FOCUS STRIP
+========================= */
+
+.focus-strip{
+  width:min(1400px,95%);
+  margin:40px auto;
+  border-radius:30px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(rgba(10,61,98,.90),rgba(10,61,98,.90)),
+    url("https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=1800");
+
+  background-size:cover;
+  background-position:center;
+
+  color:white;
+  padding:70px 8%;
+  text-align:center;
+
+  box-shadow:var(--shadow);
+}
+
+.focus-strip h2{
+  font-size:clamp(34px,5vw,44px);
+  color:var(--orange-light);
+  margin:0 0 18px;
+}
+
+.focus-strip p{
+  max-width:950px;
+  margin:0 auto;
+  color:white;
+  font-size:clamp(18px,2.2vw,22px);
+  line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:var(--blue);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer h2{
+  font-size:40px;
+  margin:0 0 12px;
+  color:var(--orange-light);
+}
+
+.footer p{
+  font-size:18px;
+  line-height:1.6;
+  margin:0 auto;
+  max-width:750px;
+}
+
+.footer a{
+  color:var(--orange-light);
+  font-weight:bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+  .menu-button{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    background:var(--blue);
+    padding:12px 20px 20px;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:14px;
+    border-radius:10px;
+  }
+}
+
+@media(max-width:768px){
+
+  .hero-wrap{
+    padding:18px 12px 24px;
+  }
+
+  .hero{
+    width:100%;
+    min-height:auto;
+    border-radius:22px;
+    padding:54px 18px;
+  }
+
+  .section{
+    padding:50px 18px;
+  }
+
+  .stats,
+  .info-grid,
+  .missionary-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .info-card{
+    padding:26px 22px;
+  }
+
+  .missionary-photo{
+    height:280px;
+  }
+
+  .missionary-content{
+    padding:26px 22px;
+  }
+
+  .focus-strip{
+    width:calc(100% - 24px);
+    margin:24px auto;
+    border-radius:22px;
+    padding:55px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="site-header">
+
+  <div class="nav-container">
+
+    <a href="../" class="brand">
+      Lakeview <span>Missionaries</span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="../">
+        Home
+      </a>
+
+      <a href="../next-gen/">
+        Next Gen
+      </a>
+
+      <a href="../europe/">
+        Europe
+      </a>
+
+      <a href="../africa/">
+        Africa
+      </a>
+
+      <a href="../eurasia/">
+        Eurasia
+      </a>
+
+      <a href="../asia-pacific/">
+        Asia Pacific
+      </a>
+
+      <a href="../latin-america/" class="active">
+        Latin America
+      </a>
+
+      <a href="../international-ministries/">
+        International Ministries
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero-wrap">
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Latin America Caribbean
+      </h1>
+
+      <h2>
+        Lakeview Assembly of God Missionaries
+      </h2>
+
+      <p class="hero-quote">
+        “Reaching the other five.”
+      </p>
+
+      <p>
+        Lakeview partners with missionaries and ministries serving
+        across Latin America and the Caribbean through prayer, giving,
+        sending, church planting, discipleship, compassion ministries,
+        leadership development, and gospel outreach.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="section white">
+
+  <h2>
+    AGWM Latin America Caribbean Snapshot
+  </h2>
+
+  <p>
+    One in six people in Latin America Caribbean knows Jesus.
+    AGWM LAC is reaching “the other five” through church planting.
+  </p>
+
+  <div class="stats">
+
+    <div class="stat-card">
+      <h3>659.9M+</h3>
+      <p>Population</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>82.1%</h3>
+      <p>Nonevangelical</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>643</h3>
+      <p>Unreached People Groups</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>27.3M+</h3>
+      <p>AG Constituents</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>219,847</h3>
+      <p>AG Churches</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>181,829</h3>
+      <p>AG Ministers</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>473</h3>
+      <p>Missionaries and Associates</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     WHY IT MATTERS
+========================= -->
+
+<section class="focus-strip">
+
+  <h2>
+    Why Latin America Caribbean Matters
+  </h2>
+
+  <p>
+    Latin America Caribbean includes growing cities, rural communities,
+    island nations, immigrant communities, children and youth,
+    church plants, compassion ministries, and people who still need
+    to encounter the transforming hope of Jesus.
+  </p>
+
+</section>
+
+<!-- =========================
+     PRAYER
+========================= -->
+
+<section class="section">
+
+  <h2>
+    How We Can Pray
+  </h2>
+
+  <p>
+    Use these prayer focuses as a guide when praying for
+    Lakeview-supported missionaries and ministries serving throughout
+    Latin America and the Caribbean.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+        🙏 Pray for the Other Five
+      </h3>
+
+      <p>
+        Pray for the five out of six people in Latin America Caribbean
+        who have yet to encounter Jesus, and for missionaries and
+        national churches sharing the gospel.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        ⛪ Pray for Church Planting
+      </h3>
+
+      <p>
+        Pray for new churches, healthy pastors, discipleship movements,
+        and strong local leaders to be raised up across cities,
+        villages, and island communities.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        🤝 Pray for Compassion Ministries
+      </h3>
+
+      <p>
+        Pray for ministries serving vulnerable children, families,
+        prisoners, students, the poor, and communities affected by
+        hardship, violence, or instability.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     MISSIONARIES
+========================= -->
+
+<section class="section white">
+
+  <h2>
+    Missionaries We Support
+  </h2>
+
+  <p>
+    Meet some of the missionaries Lakeview Assembly of God supports
+    and prays for throughout the Latin America Caribbean region.
+  </p>
+
+  <div class="missionary-grid">
+
+    <a
+      href="https://agmd.org/Profile/Index/1931a7bb-67b7-4a1f-9a8e-33fd02c1fc1b"
+      class="missionary-link"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="missionary-card">
+
+        <img
+          src="https://agmd.org/Profile/ViewImage?ProfileGUID=1931a7bb-67b7-4a1f-9a8e-33fd02c1fc1b&AssetId=8"
+          alt="Daniel and Beatriz Klaehn"
+          class="missionary-photo"
+        >
+
+        <div class="missionary-content">
+
+          <h3>
+            Daniel and Beatriz Klaehn
+          </h3>
+
+          <p>
+            <strong>Region:</strong>
+            Nicaragua, Latin America Caribbean
+          </p>
+
+          <span class="learn-more">
+            Learn More →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="https://agmd.org/Profile/Index/93018a68-3cf0-4b7b-b571-d9142ade47c0"
+      class="missionary-link"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="missionary-card">
+
+        <img
+          src="https://agmd.org/Profile/ViewImage?ProfileGUID=93018a68-3cf0-4b7b-b571-d9142ade47c0&AssetId=8"
+          alt="Liz Ramos"
+          class="missionary-photo"
+        >
+
+        <div class="missionary-content">
+
+          <h3>
+            Liz Ramos
+          </h3>
+
+          <p>
+            <strong>Region:</strong>
+            Latin America Caribbean School of Theology
+          </p>
+
+          <span class="learn-more">
+            Learn More →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="https://agmd.org/Profile/Index/d840e381-489b-4614-b408-34753e61717f"
+      class="missionary-link"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="missionary-card">
+
+        <img
+          src="https://agmd.org/Profile/ViewImage?ProfileGUID=d840e381-489b-4614-b408-34753e61717f&AssetId=8"
+          alt="Isacc and Terry Smythia"
+          class="missionary-photo"
+        >
+
+        <div class="missionary-content">
+
+          <h3>
+            Isacc and Terry Smythia
+          </h3>
+
+          <p>
+            <strong>Region:</strong>
+            LAC Strategic Network, Latin America Caribbean
+          </p>
+
+          <span class="learn-more">
+            Learn More →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     PARTNER
+========================= -->
+
+<section class="section">
+
+  <h2>
+    Ways Lakeview Can Partner
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+
+      <h3>
+        Pray
+      </h3>
+
+      <p>
+        Commit to praying regularly for missionaries, church plants,
+        pastors, children, families, communities, and those who
+        have not yet encountered Jesus.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        Give
+      </h3>
+
+      <p>
+        Support missionaries and missions projects through faithful giving
+        that helps plant churches, train leaders, and serve communities
+        across Latin America Caribbean.
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>
+        Go
+      </h3>
+
+      <p>
+        Be open to short-term trips, missions opportunities,
+        and God’s call to serve wherever He leads.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+  <h2>
+    Pray • Give • Go
+  </h2>
+
+  <p>
+    Learn more from AGWM Latin America Caribbean:
+    <br><br>
+
+    <a
+      href="https://agwm.org/en/regions/latin-america-caribbean/"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit AGWM Latin America Caribbean
+    </a>
+  </p>
+
+</footer>
+
+<script>
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuButton.addEventListener(
+  "click",
+  function(){
+
+    navLinks.classList.toggle("open");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
